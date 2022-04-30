@@ -24,10 +24,6 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 1337
-    },
-    rinkeby: {
-      url: 'Infura Key',
-      accounts: [`Replace Private Key`]
     }
     //For main net uses rikeby
   }

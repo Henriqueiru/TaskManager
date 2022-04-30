@@ -1,0 +1,3 @@
+first: Go app.js
+
+The new ethers contract in app.js contain the contrat of the command hardhat node
