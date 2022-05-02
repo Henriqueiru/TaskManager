@@ -28,4 +28,4 @@ for main net uses: rinkeby: {
       accounts: [`Replace Private Key`]
     }
 
-
+use hardhat compile; hardhat test and hardhat about localhost
