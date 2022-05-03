@@ -42,7 +42,7 @@ function App() {
       setAccount(accounts[0])
       setContract(
         new ethers.Contract(
-          '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512',
+          '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
           Manager.abi,
           newSigner
         )
@@ -57,9 +57,54 @@ function App() {
   }, [])
 
   return (
-    <div>
-      <button onClick={() => createTicket('Test')}>Add ticket</button>
-      <button onClick={getTickets}>Load data</button>
+    <div className="page">
+      <div className="header">
+        <p>Task Manager</p>
+        {account != '' ? (
+          <p>{account.substring(0, 9)}</p>
+        ) : (
+          <button className="big_button" onClick={initConnection}>
+            Connect
+          </button>
+        )}
+      </div>
+
+      <div className="input_section">
+        <div>
+          <button className="big_button" onClick={() => createTicket(name)}>
+            Create Ticket
+          </button>
+          <input
+            className="input"
+            onChange={e => setName(e.target.value)}
+            placeholder="Ticket Name"
+          />
+        </div>
+        <button className="big_button" onClick={getTickets}>
+          Load data
+        </button>
+      </div>
+
+      <div className="main">
+        <div className="main_col" style={{ backgroundColor: 'lightPink' }}>
+          <div className="main_col_heading">Todo</div>
+          {tickets.map(item => {
+            return <p>{item.name}</p>
+          })}
+        </div>
+        <div className="main_col" style={{ backgroundColor: 'lightBlue' }}>
+          <div className="main_col_heading">Busy</div>
+          {tickets.map(item => {
+            return <p>{item.name}</p>
+          })}
+        </div>
+        <div className="main_col" style={{ backgroundColor: 'lightGreen' }}>
+          <div className="main_col_heading">Done</div>
+          {tickets.map(item => {
+            return <p>{item.name}</p>
+          })}
+        </div>
+      </div>
     </div>
   )
 }
