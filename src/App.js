@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
 import Manager from './artifacts/contracts/Manager.sol/Manager.json'
+import './App.css'
 
 function App() {
   const [name, setName] = useState('')
